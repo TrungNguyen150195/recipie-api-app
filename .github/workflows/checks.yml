@@ -1,5 +1,5 @@
 ___
-name: Check push
+name: Check
 
 on: [push]
 
