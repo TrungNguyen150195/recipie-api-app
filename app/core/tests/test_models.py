@@ -15,7 +15,7 @@ class ModelTests(TestCase):
         """Test creating a user with an email is successful."""
         email = 'test@example.com'
         password = 'testpass123'
-        user = get_user_model().create_user(
+        user = get_user_model().objects.create_user(
             email=email,
             password=password,
         )
@@ -27,8 +27,8 @@ class ModelTests(TestCase):
         sample_emails = [
             ['test1@EXAMPLE.com', 'test1@example.com'],
             ['Test2@Example.com', 'Test2@example.com'],
-            ['TEST#@EXAMPLE.COM', 'TEST3@example.com'],
-            ['test4@example.COM', 'test4@example.com']
+            ['TEST3@EXAMPLE.com', 'TEST3@example.com'],
+            ['test4@example.COM', 'test4@example.com'],
         ]
         for email, expected in sample_emails:
             user = get_user_model().objects.create_user(email, 'sample123')
